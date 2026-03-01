@@ -3,9 +3,10 @@ require_once('includes/connect.php');
 
 $selected_project = $_GET['id'];
 
-$query = "SELECT * FROM project WHERE id = ".$selected_project;
-$result = mysqli_query($connect, $query);
-$row = mysqli_fetch_array($result);
+$query = "SELECT * FROM project WHERE id = :id";
+$stmt = $pdo->prepare($query);
+$stmt->execute([':id' => $selected_project]);
+$row = $stmt->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
