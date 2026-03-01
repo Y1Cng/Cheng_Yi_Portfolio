@@ -1,15 +1,11 @@
-@charset "UTF-8";
+// Import All SASS Modules
+// Order: Variables → Base → Partials → Responsive
+@import 'variables';
+@import 'base';
+@import 'nav';
+@import 'portfolio';
+@import 'form';
+@import 'responsive';
 
-@use 'abstracts';
-@use 'base';
-@use 'layout';
-@use 'components';
-@use 'pages';
-
-// Plyr custom styles
-:root {
-  --plyr-color-main: #6b7280;
-  --plyr-control-icon-size: 15px;
-  --plyr-control-radius: 20px;
-  --plyr-font-family: "Poppins", sans-serif;
-}
+// Compile Settings (for Sourcemap)
+// Output: compressed main.css + main.css.map

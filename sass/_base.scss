@@ -1,0 +1,108 @@
+// Base Reset & Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-roboto;
+  background-color: $bg-light;
+  color: $text-gray;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-poppins;
+  font-weight: 600;
+  color: $text-dark;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+// Global Button Styles
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: $radius-sm;
+  font-family: $font-roboto;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+
+  &-primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+
+  &-secondary {
+    background-color: $text-gray;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($text-gray, 10%);
+    }
+  }
+
+  &-danger {
+    background-color: #dc3545;
+    color: $white;
+
+    &:hover {
+      background-color: #bb2d3b;
+    }
+  }
+
+  &-restore {
+    background-color: #28a745;
+    color: $white;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}
+
+// Hidden Class (for AJAX message)
+.hidden {
+  display: none !important;
+}
+
+// Admin Card Style (for CMS)
+.card {
+  background: $white;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-md;
+  margin-bottom: $spacing-lg;
+}
+
+// Message Alert Styles
+.form-msg, .msg-success, .msg-error {
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  margin: $spacing-sm 0;
+  font-size: 0.875rem;
+}
+
+.msg-success, .form-msg.success {
+  background-color: $success-color;
+  color: $text-dark;
+}
+
+.msg-error, .form-msg.error {
+  background-color: $error-color;
+  color: #D8000C;
+}

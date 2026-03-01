@@ -1,0 +1,41 @@
+// Responsive Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Mobile (max 639px)
+@media (max-width: 639px) {
+  .admin-header {
+    flex-direction: column;
+    gap: $spacing-sm;
+    text-align: center;
+  }
+
+  .portfolio-item img {
+    height: 12rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem $spacing-sm;
+    font-size: 0.75rem;
+  }
+}
+
+// Tablet (640px - 767px)
+@media (min-width: 640px) and (max-width: 767px) {
+  .portfolio-item img {
+    height: 14rem;
+  }
+}
+
+// Desktop (min 1024px)
+@media (min-width: 1024px) {
+  .admin-container {
+    padding: 0 $spacing-md;
+  }
+
+  .portfolio {
+    padding: $spacing-xl 0;
+  }
+}
