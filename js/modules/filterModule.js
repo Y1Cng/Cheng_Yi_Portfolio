@@ -30,7 +30,8 @@ export function initFilter() {
                     duration: 0.3
                 });
             } else {
-                item.style.opacity = '0.3';
+                item.style.display = 'none';
+                item.style.opacity = '0';
             }
         });
     }
