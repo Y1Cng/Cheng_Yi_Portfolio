@@ -14,7 +14,9 @@
     <header class="flex items-center justify-between px-4 md:px-16 py-4 md:py-8">
         <div class="flex items-center gap-2 md:gap-4">
             <div class="relative">
-                <img src="./images/profile-image.png" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                <a href="index.php">
+                    <img src="./images/profile-image.png" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                </a>
             </div>
             <div class="relative">
                 <div class="hire-me-btn rounded-full px-4 py-2">

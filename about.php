@@ -31,17 +31,21 @@ $imageMap = array(
 
 <body>
     <!-- Header -->
-    <header class="flex items-center justify-between px-4 md:px-16 py-4 md:py-8">
+    <header class="site-header flex items-center justify-between px-4 md:px-16 py-4 md:py-8">
         <!-- Logo Section -->
         <div class="flex items-center gap-2 md:gap-4">
             <div class="relative">
-                <img src="./images/profile-image.svg" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                <a href="index.php">
+                    <img src="./images/profile-image.svg" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                </a>
             </div>
 
             <div class="relative">
-                <div class="hire-me-btn rounded-full px-4 py-2">
-                    <span class="hire-me-text text-xs font-medium">Hire Me!</span>
-                </div>
+                <a href="contact.php">
+                    <div class="hire-me-btn rounded-full px-4 py-2">
+                        <span class="hire-me-text text-xs font-medium">Hire Me!</span>
+                    </div>
+                </a>
                 <div class="absolute inset-0 border-2 border-dashed border-gray-400 rounded-full scale-110 pointer-events-none">
                 </div>
                 <img src="./images/arrow-icon.png" alt="Arrow" class="absolute -right-8 top-0 w-10 h-5 pointer-events-none">
@@ -76,9 +80,9 @@ $imageMap = array(
 
     </header>
 
-    <main>
+    <main class="main-content">
         <!-- About Info Section -->
-        <section class="px-4 md:px-16 py-8 md:py-16">
+        <section class="about-info-section px-4 md:px-16 py-8 md:py-16">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-3xl md:text-4xl mb-8"
                     style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #0D0D0D;">About Me</h1>
@@ -87,7 +91,7 @@ $imageMap = array(
                         <img src="./images/profile-image.png" alt="Yi Cheng Profile"
                             class="w-full h-full object-cover rounded-lg">
                     </div>
-                    <div>
+                    <div class="max-w-xs">
                         <p class="font-secondary text-sm leading-relaxed mb-4" style="color: #6E7B8B;">
                             I'm Yi, a web developer, UI/UX designer, and motion graphics creator - I bring digital
                             projects
@@ -107,12 +111,20 @@ $imageMap = array(
             </div>
         </section>
 
-        <!-- Featured Works Section -->
-        <section class="px-4 md:px-16 py-8 md:py-16">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-2xl md:text-3xl mb-8 text-center"
-                    style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #0D0D0D;">Explore my featured
-                    projects below</h2>
+        <!-- Demo Reel Video Section -->
+        <section class="demo-reel-section px-2 md:px-8 py-4 md:py-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl mb-8"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #0D0D0D;">Demo Reel</h2>
+                <div class="bg-gray-300 rounded-lg overflow-hidden">
+                    <video controls class="w-full h-auto" poster="./images/video-poster.jpg">
+                        <source src="./videos/Cheng_Yi_Demo_Reel.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+                <section class="projects-section">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <?php
                     while($row = $results->fetch()) {
@@ -139,7 +151,7 @@ $imageMap = array(
     </main>
 
     <!-- Footer -->
-    <footer class="px-4 md:px-16 py-8 md:py-16 text-center">
+    <footer class="site-footer px-4 md:px-16 py-8 md:py-16 text-center">
         <p class="font-secondary text-xs" style="color: #6E7B8B;">@Yi Cheng. All rights reserved.</p>
     </footer>
 
