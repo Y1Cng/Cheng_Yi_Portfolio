@@ -5,7 +5,7 @@ $host = '127.0.0.1';
 $dbname = 'db_portfolio';
 $username = 'root';
 $password = 'root'; // MAMP: root | WAMP: "" (empty)
-$port = 3306; // From your MAMP WebStart page
+$port = 8889; // From your MAMP WebStart page
 
 try {
     // PDO connection with error mode set to exception
