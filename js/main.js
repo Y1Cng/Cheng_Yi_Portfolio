@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP animations (global)
     initAnimations();
     // Initialize portfolio filter (only on index.php)
-    if (document.querySelector('.portfolio')) {
+    if (document.querySelector('.portfolio-section')) {
         initFilter();
     }
 });

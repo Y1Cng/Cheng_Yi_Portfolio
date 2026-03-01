@@ -10,16 +10,20 @@ export function initFilter() {
     function setActiveBtn(activeBtn) {
         filterBtns.forEach(btn => {
             btn.classList.remove('active');
-            btn.style.backgroundColor = '#FF6F61';
+            btn.style.backgroundColor = '';  // Reset to default
+            btn.style.color = '';  // Reset text color
         });
         activeBtn.classList.add('active');
-        activeBtn.style.backgroundColor = '#FF8A7A';
+        activeBtn.style.backgroundColor = '#FF8A7A';  // Deep orange
+        activeBtn.style.color = '#FFFFFF';  // White text
     }
 
     // Filter projects by category
     function filterProjects(category) {
+        console.log('Filtering for:', category);
         portfolioItems.forEach(item => {
             const itemCategory = item.dataset.category;
+            console.log('Item category:', itemCategory);
             if (category === 'all' || itemCategory === category) {
                 item.style.display = 'block';
                 item.style.opacity = '1';
