@@ -2,7 +2,7 @@
 require_once('includes/connect.php');
 
 $query = "SELECT * FROM project LIMIT 4";
-$results = mysqli_query($connect, $query);
+$results = $pdo->query($query);
 
 $imageMap = array(
     'flowsonic' => 'flowsonic_earbuds_x-ray_1_0000.jpg',
@@ -115,7 +115,7 @@ $imageMap = array(
                     projects below</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <?php
-                    while($row = mysqli_fetch_array($results)) {
+                    while($row = $results->fetch()) {
                         $projectName = strtolower($row['project']);
                         $projectImage = './images/image-placeholder.png';
                         
