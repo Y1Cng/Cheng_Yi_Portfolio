@@ -76,17 +76,17 @@ try {
                 
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-4 mb-12">
-                    <button class="filter-btn active px-4 py-2 rounded-full text-sm" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm" data-filter="UI & UX">UI & UX</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm" data-filter="Motion Graphics">Motion Graphics</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm" data-filter="Rebrand">Rebrand</button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm" data-filter="Backend">Backend</button>
+                    <button class="filter-btn active px-4 py-2 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow" data-filter="ui">UI & UX</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow" data-filter="motion">Motion Graphics</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow" data-filter="rebrand">Rebrand</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow" data-filter="backend">Backend</button>
                 </div>
 
                 <!-- Portfolio Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <?php foreach ($projects as $project): ?>
-                        <div class="portfolio-item min-h-[400px]" data-category="<?php echo htmlspecialchars($project['flag']); ?>">
+                        <div class="portfolio-item min-h-[400px]" data-category="<?php echo strtolower($project['flag']); ?>">
                             <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
                                 <!-- Project image -->
                                 <img src="./images/<?php echo $project['image'] ?? 'image-placeholder.png'; ?>" alt="<?php echo htmlspecialchars($project['project']); ?>" class="w-full h-64 object-cover">
