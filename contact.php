@@ -40,18 +40,12 @@ ini_set('display_errors', 1);
 
 <body style="background-color: #F8F8F8; color: #6E7B8B;">
     <!-- Header (unchanged original code) -->
-    <header class="flex items-center justify-between px-4 md:px-16 py-4 md:py-8">
+    <header class="site-header flex items-center justify-between px-4 md:px-16 py-4 md:py-8">
         <div class="flex items-center gap-2 md:gap-4">
             <div class="relative">
-                <img src="./images/profile-image.svg" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
-            </div>
-            <div class="relative">
-                <div class="hire-me-btn rounded-full px-4 py-2">
-                    <span class="hire-me-text text-xs font-medium">Hire Me!</span>
-                </div>
-                <div class="absolute inset-0 border-2 border-dashed border-gray-400 rounded-full scale-110 pointer-events-none">
-                </div>
-                <img src="./images/arrow-icon.png" alt="Arrow" class="absolute -right-8 top-0 w-10 h-5 pointer-events-none">
+                <a href="index.php">
+                    <img src="./images/profile-image.svg" alt="Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full">
+                </a>
             </div>
         </div>
         <button id="mobileMenuBtn"
@@ -76,9 +70,9 @@ ini_set('display_errors', 1);
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">
     <!-- Contact Form Section (only form part modified) -->
-    <section class="px-4 md:px-16 py-8 md:py-16">
+    <section class="contact-form-section px-4 md:px-16 py-8 md:py-16">
         <div class="max-w-2xl mx-auto">
             <h1 class="text-3xl md:text-4xl mb-8" style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #0D0D0D;">Get In Touch</h1>
             <div class="mb-8">
@@ -91,20 +85,20 @@ ini_set('display_errors', 1);
             <form id="contactForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-sm mb-2" style="color: #6E7B8B;">Name*</label>
+                        <label for="name" class="block text-sm mb-2 text-left" style="color: #6E7B8B;">Name*</label>
                         <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none" style="border-color: #6E7B8B; color: #0D0D0D;" onfocus="this.style.borderColor='#FF6F61'" onblur="this.style.borderColor='#6E7B8B'">
                     </div>
                     <div>
-                        <label for="phone" class="block text-sm mb-2" style="color: #6E7B8B;">Phone Number*</label>
+                        <label for="phone" class="block text-sm mb-2 text-left" style="color: #6E7B8B;">Phone Number*</label>
                         <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border rounded-lg focus:outline-none" style="border-color: #6E7B8B; color: #0D0D0D;" onfocus="this.style.borderColor='#FF6F61'" onblur="this.style.borderColor='#6E7B8B'">
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm mb-2" style="color: #6E7B8B;">Email*</label>
+                    <label for="email" class="block text-sm mb-2 text-left" style="color: #6E7B8B;">Email*</label>
                     <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none" style="border-color: #6E7B8B; color: #0D0D0D;" onfocus="this.style.borderColor='#FF6F61'" onblur="this.style.borderColor='#6E7B8B'">
                 </div>
                 <div>
-                    <label for="message" class="block text-sm mb-2" style="color: #6E7B8B;">Message*</label>
+                    <label for="message" class="block text-sm mb-2 text-left" style="color: #6E7B8B;">Message*</label>
                     <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border rounded-lg focus:outline-none" style="border-color: #6E7B8B; color: #0D0D0D;" onfocus="this.style.borderColor='#FF6F61'" onblur="this.style.borderColor='#6E7B8B'"></textarea>
                 </div>
                 <!-- Added: AJAX message display container -->
@@ -116,7 +110,7 @@ ini_set('display_errors', 1);
     </main>
 
     <!-- Footer (unchanged) -->
-    <footer class="px-4 md:px-16 py-8 md:py-16 text-center">
+    <footer class="site-footer px-4 md:px-16 py-8 md:py-16 text-center">
         <p class="font-secondary text-xs" style="color: #6E7B8B;">@Yi Cheng. All rights reserved.</p>
     </footer>
 
