@@ -7,6 +7,11 @@ export function initMobileMenu() {
     // Return if elements don't exist
     if (!mobileMenuBtn || !mobileMenu || !closeMobileMenu) return;
 
+    // Move mobile menu to body to avoid being trapped in header stacking context or transform
+    if (mobileMenu.parentElement !== document.body) {
+        document.body.appendChild(mobileMenu);
+    }
+
     // Open mobile menu
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.style.display = 'block';
@@ -14,8 +19,8 @@ export function initMobileMenu() {
         mobileMenu.style.position = 'fixed';
         mobileMenu.style.top = '0';
         mobileMenu.style.left = '0';
-        mobileMenu.style.width = '100%';
-        mobileMenu.style.height = '100%';
+        mobileMenu.style.width = '100vw';
+        mobileMenu.style.height = '100vh';
         mobileMenu.style.backgroundColor = '#F8F8F8';
         mobileMenu.style.zIndex = '9999';
     });
