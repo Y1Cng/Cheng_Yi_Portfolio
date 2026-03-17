@@ -1,12 +1,9 @@
-// js/modules/filterModule.js (ES6 Module)
 export function initFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-    // Return if no elements found
     if (!filterBtns.length || !portfolioItems.length) return;
 
-    // Set active button style
     function setActiveBtn(activeBtn) {
         filterBtns.forEach(btn => {
             btn.classList.remove('active');
@@ -16,7 +13,6 @@ export function initFilter() {
         activeBtn.style.backgroundColor = '#FF8A7A';
     }
 
-    // Filter projects by category
     function filterProjects(category) {
         portfolioItems.forEach(item => {
             const itemCategory = item.dataset.category;
@@ -35,16 +31,16 @@ export function initFilter() {
         });
     }
 
-    // Add click event to filter buttons
+    function handleFilterClick(event) {
+        const category = event.target.dataset.filter;
+        setActiveBtn(event.target);
+        filterProjects(category);
+    }
+
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const category = e.target.dataset.filter;
-            setActiveBtn(e.target);
-            filterProjects(category);
-        });
+        btn.addEventListener('click', handleFilterClick);
     });
 
-    // Initialize with all projects
     setActiveBtn(filterBtns[0]);
     filterProjects('all');
 }

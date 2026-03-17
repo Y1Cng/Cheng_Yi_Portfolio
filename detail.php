@@ -122,7 +122,7 @@ $randomProjects = $randomStmt->fetchAll();
         <p class="font-secondary text-gray-500 text-xs">@Yi Cheng. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>
