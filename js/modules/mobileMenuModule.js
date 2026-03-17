@@ -1,21 +1,18 @@
-// js/modules/mobileMenuModule.js (ES6 Module)
 export function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileMenuBtn = document.querySelector('#mobileMenuBtn');
+    const mobileMenu = document.querySelector('#mobileMenu');
+    const closeMobileMenu = document.querySelector('#closeMobileMenu');
 
-    // Return if elements don't exist
-    if (!mobileMenuBtn || !mobileMenu || !closeMobileMenu) return;
+    if (!mobileMenuBtn || !mobileMenu || !closeMobileMenu) {
+        return;
+    }
 
-    // Move mobile menu to body to avoid being trapped in header stacking context or transform
     if (mobileMenu.parentElement !== document.body) {
         document.body.appendChild(mobileMenu);
     }
 
-    // Open mobile menu
-    mobileMenuBtn.addEventListener('click', () => {
+    function openMobileMenu() {
         mobileMenu.style.display = 'block';
-        // Add overlay style
         mobileMenu.style.position = 'fixed';
         mobileMenu.style.top = '0';
         mobileMenu.style.left = '0';
@@ -23,18 +20,21 @@ export function initMobileMenu() {
         mobileMenu.style.height = '100vh';
         mobileMenu.style.backgroundColor = '#F8F8F8';
         mobileMenu.style.zIndex = '9999';
-    });
+    }
 
-    // Close mobile menu
-    closeMobileMenu.addEventListener('click', () => {
+    function closeMenu() {
         mobileMenu.style.display = 'none';
-    });
+    }
 
-    // Close menu when clicking links (optional)
+    function handleLinkClick() {
+        closeMenu();
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenu.addEventListener('click', closeMenu);
+
     const mobileLinks = mobileMenu.querySelectorAll('.nav-link');
     mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.style.display = 'none';
-        });
+        link.addEventListener('click', handleLinkClick);
     });
 }
